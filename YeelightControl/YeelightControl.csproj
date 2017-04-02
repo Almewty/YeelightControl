@@ -19,7 +19,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
-    <OutputPath>..\output\Debug\</OutputPath>
+    <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <DebugType>full</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -28,7 +28,7 @@
     <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
-    <OutputPath>..\output\Release\</OutputPath>
+    <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <Optimize>true</Optimize>
     <DebugType>pdbonly</DebugType>
@@ -47,6 +47,9 @@
     </Reference>
     <Reference Include="Catel.MVVM, Version=4.5.4.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Catel.MVVM.4.5.4\lib\net46\Catel.MVVM.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -79,6 +82,21 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Models\Color.cs" />
+    <Compile Include="Models\Device.cs" />
+    <Compile Include="Models\Enums\ColorMode.cs" />
+    <Compile Include="Models\Enums\Effect.cs" />
+    <Compile Include="Models\Enums\Model.cs" />
+    <Compile Include="Models\Enums\Property.cs" />
+    <Compile Include="Models\Settings.cs" />
+    <Compile Include="Services\DeviceController.cs" />
+    <Compile Include="Services\DeviceService.cs" />
+    <Compile Include="Services\Interfaces\IDeviceController.cs" />
+    <Compile Include="Services\Interfaces\IDeviceService.cs" />
+    <Compile Include="Services\Interfaces\ISettingsService.cs" />
+    <Compile Include="Services\Interfaces\IYeelightMessenger.cs" />
+    <Compile Include="Services\SettingsService.cs" />
+    <Compile Include="Services\YeelightMessenger.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -111,9 +129,7 @@
     </None>
     <AppDesigner Include="Properties\" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="FodyWeavers.xml" />
   </ItemGroup>

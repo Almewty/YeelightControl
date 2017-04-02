@@ -20,7 +20,7 @@
         }
         #endregion
 
-        #region Properties
+        #region Property
         /// <summary>
         /// Gets the title of the view model.
         /// </summary>
